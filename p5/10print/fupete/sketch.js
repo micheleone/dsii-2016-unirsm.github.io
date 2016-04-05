@@ -87,7 +87,7 @@ function windowResized() {
 // se premi "s" salva come immagine
 function keyTyped() {
   if (key === 's') {
-    saveCanvas();
+    saveCanvas(); // < in Safari apre l'immagine come indirizzo, in Chrome salva direttamente, ... 
   }
   return false;
 }
