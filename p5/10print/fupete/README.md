@@ -1,7 +1,7 @@
-# 10 PRINT WALL | [LAUNCH!](http://dsii-2016-unirsm.github.io/p5/10print/fupete)
-_10 PRINT PORTING TO P5JS_  
-BY [@FUPETE](http://www.twitter.com/fupete) © 2016 MIT LICENSE  
-DSII2016 LAB @UNIRSM [WEBSITE](dsii-2016-unirsm.github.io)  
+# 10 Print wall | [launch / open](http://dsii-2016-unirsm.github.io/p5/10print/fupete)
+_10 Print porting to P5js_  
+by [@FUPETE](http://www.twitter.com/fupete) © 2016 MIT License
+DSII2016 Lab @UNIRSM [website](dsii-2016-unirsm.github.io)
 
 ----
 
