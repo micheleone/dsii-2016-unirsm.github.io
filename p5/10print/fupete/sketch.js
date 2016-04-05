@@ -83,3 +83,11 @@ function preparaQuadretto() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+// se premi "s" salva come immagine
+function keyTyped() {
+  if (key === 's') {
+    saveCanvas();
+  }
+  return false;
+}
