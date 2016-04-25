@@ -1,86 +1,114 @@
-// Daniele Tabellini @fupete © 2016 MIT License
-// 10 print porting to P5js | Firenze, IT | 4.2016
+// Alex Alessi © 2016 MIT License
+// 10 print porting to P5js | San Marino, SM | 4.2016
 // Educational purpose, made for DSII2016 lab @UniRSM
 
-var x = 0;  // store current x position on the grid
-var y = 0;  // store current y position on the grid
-var g = 50; // grid size
-var colore = 200; // current grid color
+var w = 16;
+var h = 16;
+var index = 0;
 
 function setup() {
-   pixelDensity(displayDensity());
-   createCanvas(windowWidth, windowHeight);
-   //
-   background(200);
-   //
-   url = getURL();
-   strokeJoin(ROUND);
-   cursor(HAND);
- }
+
+  pixelDensity(displayDensity());
+createCanvas(windowWidth, windowHeight);
+background(255);
+noStroke();
+
+ url = getURL();
+cursor(HAND);
+
+
+}
 
 function draw() {
-  preparaQuadretto();
-  // riga proporzionale alla griglia
-  strokeWeight(g/10);
-  // lancio la monetina e disegno la riga corrispondente
-  if (testa()) {
-    line(x*g,height-g*y,x*g+g,height-g*y-g);
+  
+}
+
+
+//-----------------------------------------
+
+
+
+var value = 0;  //Al click del mouse cambia valore
+
+function mouseClicked() {
+  if (value == 0) {
+   value = 1;
   } else {
-    line(x*g,height-g*y-g,x*g+g,height-g*y);
+    value = 0;
   }
-  // passo alla casella a lato
-  x++;
-  // se sono in fondo alla riga vado a capo alla riga successiva
-  if (x*g >= width) {
-    x=0;
-    y++;
-    preparaRiga();
+  return false;
+}
+
+
+//-----------------------------------------
+ 
+
+
+function mouseMoved() {
+
+
+
+if (index == windowWidth/w) {
+    var p = get(0, 16, windowWidth, windowHeight);
+    background(255);
+    set(0, 0, p);
+    index = 0;
+  }//if
+
+  index = index + 10;
+
+  if (value == 1) { //se clicco il mouse attivo questo sotto
+
+      if (random(2) <1) {
+       fill(135, 108, 255);
+
+                 } else {
+
+                fill(255, 108, 140);
+
+
+                ellipse(mouseX, mouseY, index, index);
+
+    /////       
+            
+
+
+                push();
+                strokeWeight(3);
+                stroke(255, 255, 0);
+                fill(0, 0);
+                var k = index + 20;
+                ellipse(mouseX, mouseY, k, k);
+                pop();
+
+   } 
+   
+  
+   
+   } else {
+
+    if (random(2) <1) {
+      fill(135, 108, 255);
+    } else {
+      fill(255, 255, 255);
+    }//if
+          ellipse(mouseX, mouseY, index, index);
+
   }
-  // se sono in fondo alla pagina ricomincio con colore e griglia differente
-  if (y*g >= height) {
-    y=0;
-    colore = random(255);
-    g = 5+random(width);
-    preparaRiga();
-  }
-}
 
-// riparti se premi il mouse
-function mousePressed() {
-  x=0;
-  y=0;
-  colore = random(255);
-  g = 5+random(width);
-  preparaRiga();
-}
 
-// lancio della monetina
-function testa() {
-  if (random(2) <= 1) {
-    return(true); // testa
-  } else {
-    return(false); // croce
-  }
-}
 
-// cancella una riga prima di disegnarci
-function preparaRiga() {
-  /*fill(colore);
-  noStroke();
-  rect(0,height-g*y-g-1,width,g+1);
-  stroke(255-colore);*/
-}
+  return false;
 
-// cancella un quadretto prima di disegnarci
-function preparaQuadretto() {
-  fill(colore);
-  noStroke();
-  rect(x*g,height-g*(y+1),g-1,g-1);
-  //rect(x*g,height-g*(y+1),g-(g/20),g-(g/20));
-  stroke(255-colore);
-}
+}//mouseMoved
 
-// se ridimensiona la finestra ricalcola width e height canvas
+
+
+
+
+
+
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
@@ -92,4 +120,11 @@ function keyTyped() {
   }
   return false;
 }
-Status API Training Shop Blog About
+
+// se premi "canc" cancella tutto
+function keyTyped() {
+  if (key === ' ') {
+    clear();
+  }
+  return false;
+}
