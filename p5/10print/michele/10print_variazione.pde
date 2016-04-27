@@ -18,71 +18,44 @@ slash(120); // Numero di ramificazioni
 }
 
 void slash(float h) {
-
 h *= 0.66; // Ogni linea è lunga 2/3 rispetto alle dimensioni di quella precedente
   
   if (mousePressed) {
-    
   background(#0082c8); // Cliccando con il mouse si resetta la schermata
   
 } else {
     
 if (h > 20) {
-      
-pushMatrix();    // Salvataggio dello stato attuale della trasformazione (cioè il sistema di coordinate corrente)
-      
-rotate(theta);   // Rotazione delle linee
-      
-float c = map(mouseX, 0, width, 255, 0); // Controllo del movimento del primo gruppo attraverso il mouse
-      
-stroke(255, c, 0); // Colorazione della linea
-      
-line(-10, 0, 0, -h);  // Creazione della prima linea   
-      
-translate(0, -h); // Posizionamento sugli assi x e y della prima linea
-      
-line(-10, 0, 0, h); 
-      
-translate(h, 0);
-      
-slash(h);       // Creazione di sottogruppi di linee
-      
-popMatrix();     // Ripristino dello stato precedente della matrice
+  pushMatrix();    // Salvataggio dello stato attuale della trasformazione (cioè il sistema di coordinate corrente)
+      rotate(theta);   // Rotazione delle linee
+      float c = map(mouseX, 0, width, 255, 0); // Controllo del movimento del primo gruppo attraverso il mouse
+      stroke(255, c, 0); // Colorazione della linea
+      line(-10, 0, 0, -h);  // Creazione della prima linea   
+      translate(0, -h); // Posizionamento sugli assi x e y della prima linea
+      line(-10, 0, 0, h); 
+      translate(h, 0);
+      slash(h);       // Creazione di sottogruppi di linee
+      popMatrix();     // Ripristino dello stato precedente della matrice
       
 // Ripetizione delle operazione per il secondo gruppo di linee
       
 pushMatrix();
-      
-rotate(-theta);
-      
-float d = map(mouseX, 0, width, 0, 255);
-      
-stroke(255);
-      
-line(10, 0, 0, -h);
-      
-translate(0, -h);
-      
-line(10, 0, 0, h);
-      
-translate(-h, 0);
-      
-slash(h);
-      
-popMatrix();
-    
-}
-  
+      rotate(-theta);
+      float d = map(mouseX, 0, width, 0, 255);
+      stroke(255);
+      line(10, 0, 0, -h);
+      translate(0, -h);
+      line(10, 0, 0, h);
+      translate(-h, 0);
+      slash(h);
+      popMatrix();
+ }
 }
   
 if (keyPressed) { // premendo il tasto "s", l'immagine "frame.jpg" viene salvata nello Sketch folder
     
 if (key == 's') {
-      
-save("frame.jpg");
-    
-}
-  
-}
-
+      save("frame.jpg");
+    }
+  }
 }
