@@ -1,27 +1,18 @@
 float theta;   
 
 void setup() {
-
 background(#0082c8);
-
 size(640, 420);
 
 }
 
 void draw() {
-
 frameRate(30); // Numero di frame 
-
 strokeWeight(1); // Spessore delle linee
-
 float a = (mouseX / (float) width) * 360f; // Generazione di un angolo da 0 a 360 gradi in base alla posizione del mouse
-
 theta = radians(a); // Conversione in radianti
-
 translate(width/2, height); // Posizione delle linee sull'asse x
-
 translate(0, -170); // Posizione delle linee sull'asse y
-
 slash(120); // Numero di ramificazioni
 
 }
