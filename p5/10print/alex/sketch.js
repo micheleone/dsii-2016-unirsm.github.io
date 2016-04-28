@@ -48,7 +48,7 @@ function mouseMoved() {
 
 
 
-if (index == windowWidth/w) {
+if (index >= windowWidth/w) {
     var p = get(0, 16, windowWidth, windowHeight);
     background(255);
     set(0, 0, p);
