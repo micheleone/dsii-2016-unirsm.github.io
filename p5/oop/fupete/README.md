@@ -5,4 +5,4 @@ DSII2016 Lab @UNIRSM [website](http://dsii-2016-unirsm.github.io)
 
 ----
 
-_work in progress_
+![](http://i.imgur.com/pZvaWy9.png?1)
