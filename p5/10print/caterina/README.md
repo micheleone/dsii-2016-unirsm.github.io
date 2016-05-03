@@ -1,5 +1,5 @@
 
-# 10 Print point | [launch / open](http://dsii-2016-unirsm.github.io/p5/10print/caterina)
+# 10 Print point | [launch / open](https://github.com/CaterinaLipari/dsii-2016-unirsm.github.io/blob/master/p5/10print/caterina/index.html)
 _10 Print porting to P5js_                        
 
 
