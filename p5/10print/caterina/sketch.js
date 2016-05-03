@@ -1,3 +1,6 @@
+// Caterina Lipari © 2016 MIT License
+// 10 print porting to P5js | San Marino, SM | 4.2016
+// Educational purpose, made for DSII2016 lab @UniRSM
 // Codice a barre
 
 var x = 0;  // store current x position on the grid
