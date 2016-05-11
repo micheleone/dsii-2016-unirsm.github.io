@@ -32,18 +32,15 @@ function draw() {
     //variante linee
   if (ciclo <= 1){
     line(x*g,y,x*g,height); //linee dritte
-  }
-    // passo alla casella a lato
-  x++;
-    //variante linee
+  } //variante linee
 
     //variante cerchi
   else (ciclo <= 2){
   ellipse(x*g,y,diametro,diametro); //cerchi casuali sulla linea ad altezza e dimensione random
-   }
+   }//variante cerchi
+
   // passo alla casella a lato
   x++;
-  }//variante cerchi
 
   }  // lancio la monetina e disegno 
 
@@ -61,8 +58,9 @@ function draw() {
 //finiti i cicli ricomincia da capo
   if (ciclo >=3 ){
     ciclo = 1;
-  }
-  }
+  }//finiti i cicli ricomincia da capo
+
+  } //chiudi draw
 
 // riparti se premi il mouse
 function mousePressed() {
