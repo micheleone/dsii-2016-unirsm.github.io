@@ -7,7 +7,7 @@
 //Da fare: dimensioni del quadrato random: il labirinto inscritto si adatta alle dimensioni random del quadrato...
 
 var x= 620; //coordinate per labirinto 10print
-var y= 350;
+var y= 280;
 var g= 20; 
 
 var t;  //trasparenza
@@ -16,7 +16,7 @@ var color= c; //colore
 
 function setup() {
 
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   background(0);
   frameRate(100); 
   rectMode(CENTER);
@@ -63,9 +63,9 @@ function draw() {
 	g=20;
   }
   
- if (y >= height-350) {  
+ if (y >= height-280) {  
   //se supera l'altezza della pagina, va a capo, ricomincia e richiama il setup
-    y = 350; 
+    y = 280; 
     setup(); //crea il rettangolo
   }
  
