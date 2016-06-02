@@ -30,6 +30,7 @@ function mouseMoved() {
 
 if (index >= windowWidth/w) {
     var p = get(0, 16, displayWidth, displayHeight);
+
     background(255);
     set(0, 0, p);
     index = 0;
@@ -39,7 +40,7 @@ if (index >= windowWidth/w) {
   if (value == 1) { //se clicco il mouse attivo questo sotto
      if (random(2) <1) {
        fill(135, 108, 255);
-       
+
       } else {
 
       fill(255, 108, 140);
@@ -52,7 +53,7 @@ if (index >= windowWidth/w) {
       var k = index + 20;
       ellipse(mouseX, mouseY, k, k);
       pop();
-      } 
+      }
 } else {
 
     if (random(2) <1) {
@@ -60,9 +61,9 @@ if (index >= windowWidth/w) {
     } else {
       fill(255, 255, 255);
     }//if
-  
+
   ellipse(mouseX, mouseY, index, index);
-  
+
 }
 return false;
 }//mouseMoved
