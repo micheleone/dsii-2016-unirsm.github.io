@@ -3,11 +3,17 @@
 // Educational purpose, made for DSII2016 lab @UniRSM
 // Codice a barre
 
+
+//inserimento input audio
+new p5.AudioIn()
+
 var x = 0;  // store current x position on the grid
 var y = 0;  // store current y position on the grid
 var g = 10; // grid size
 var colore = 255; // current grid color
 var ciclo=1;
+var input;
+var analyzer;
 
 function setup() {
    pixelDensity(displayDensity());
@@ -16,12 +22,20 @@ function setup() {
    //strokeJoin(ROUND);
    cursor(HAND);
    ellipseMode(CENTER);
+   //prendi i valori input del microfono
+   mic = new p5.AudioIn()
+  mic.start();
  }
 
 function draw() {
   //background(colore-255); solo una linea che avanza
     strokeWeight(g/random(5));
     stroke(colore);
+    
+   //variabili suoni input
+    var vol = mic.getLevel();
+    var h = map(vol, 0, 1, height, 0);
+    var r = random(4,10);
 
   // lancio la monetina e disegno 
   if (testa()) {
@@ -33,13 +47,18 @@ if (ciclo==1){
 }
 if (ciclo==2){
    //variante cerchio
-      ellipse(x*g,height/2,x+g,x+g); //cerchio al centro 
+   var h = map(vol, 0, 1, height, 0);
+      //ellipse(width/2, height/2, h, h);
+      ellipse(x*g,height/2,h/r,h/r);
+      //ellipse(x*g,height/2,x+g,x+g); //cerchio al centro 
  //variante cerchio
 }
 if (ciclo==3){
 
     //variante cerchio Random
-      ellipse(x*g,height-random(height),x+g,x+g); //cerchio al centro 
+    var h = map(vol, 0, 1, height, 0);
+      ellipse(x*g,height-random(height),h/r,h/r);
+     // ellipse(x*g,height-random(height),x+g,x+g); //cerchio al centro 
  //variante cerchio Random
 }
       // passo alla casella a lato
