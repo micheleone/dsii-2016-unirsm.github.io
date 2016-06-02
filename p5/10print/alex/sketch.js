@@ -3,32 +3,19 @@
 // Educational purpose, made for DSII2016 lab @UniRSM
 
 var w = 16;
-var h = 16;
+var value = 0;
 var index = 0;
 
 function setup() {
 
   pixelDensity(displayDensity());
-createCanvas(windowWidth, windowHeight);
-background(255);
-noStroke();
-
- url = getURL();
-cursor(HAND);
-
-
+  createCanvas(displayWidth, displayHeight);
+  background(255);
+  noStroke();
+  url = getURL();
+  cursor(HAND);
 }
-
-function draw() {
-  
-}
-
-
-//-----------------------------------------
-
-
-
-var value = 0;  //Al click del mouse cambia valore
+  //Al click del mouse cambia valore
 
 function mouseClicked() {
   if (value == 0) {
@@ -39,78 +26,51 @@ function mouseClicked() {
   return false;
 }
 
-
-//-----------------------------------------
- 
-
-
 function mouseMoved() {
 
-
-
 if (index >= windowWidth/w) {
-    var p = get(0, 16, windowWidth, windowHeight);
+    var p = get(0, 16, displayWidth, displayHeight);
+
     background(255);
     set(0, 0, p);
     index = 0;
   }//if
-
   index = index + 10;
 
   if (value == 1) { //se clicco il mouse attivo questo sotto
-
-      if (random(2) <1) {
+     if (random(2) <1) {
        fill(135, 108, 255);
 
-                 } else {
+      } else {
 
-                fill(255, 108, 140);
+      fill(255, 108, 140);
+      ellipse(mouseX, mouseY, index, index);
 
-
-                ellipse(mouseX, mouseY, index, index);
-
-    /////       
-            
-
-
-                push();
-                strokeWeight(3);
-                stroke(255, 255, 0);
-                fill(0, 0);
-                var k = index + 20;
-                ellipse(mouseX, mouseY, k, k);
-                pop();
-
-   } 
-   
-  
-   
-   } else {
+      push();
+      strokeWeight(3);
+      stroke(255, 255, 0);
+      fill(0, 0);
+      var k = index + 20;
+      ellipse(mouseX, mouseY, k, k);
+      pop();
+      }
+} else {
 
     if (random(2) <1) {
-      fill(135, 108, 255);
+    fill(135, 108, 255);
     } else {
       fill(255, 255, 255);
     }//if
-          ellipse(mouseX, mouseY, index, index);
 
-  }
+  ellipse(mouseX, mouseY, index, index);
 
-
-
-  return false;
-
+}
+return false;
 }//mouseMoved
 
 
-
-
-
-
-
-
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(displayWidth, displayHeight);   //al posto di windowHeight e windowWidth
 }
 
 // se premi "s" salva come immagine
