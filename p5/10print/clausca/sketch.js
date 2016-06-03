@@ -17,18 +17,22 @@ var color= c; //colore
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-  background(0);
   frameRate(100); 
-  rectMode(CENTER);
-  strokeWeight(2);
-  noFill(); 
-  t=80; //trasparenza del quadrato
-  l=200; //larghezza del quadrato
-  c = color(random(50, 255),random(50, 255), (50, 255));
-  smooth(); 
-  
+  finestra();
  }
 
+function finestra(){
+  background(0);
+  rectMode(CENTER);
+  strokeWeight(1);
+  noFill(); 
+  l = 200;//larghezza del quadrato
+  t=80; //trasparenza del quadrato
+  c = color(random(255), random(200, 255), random(255, 255));
+  smooth();
+ 
+  }
+  
 function draw() {
 	
 // disegna un rettangolo con coordinate width/2, height/2 (al centro della       finestra) e con larghezza uguale all'altezza..quindi un quadrato
@@ -66,7 +70,8 @@ function draw() {
  if (y >= height-280) {  
   //se supera l'altezza della pagina, va a capo, ricomincia e richiama il setup
     y = 280; 
-    setup(); //crea il rettangolo
+    clear(); 
+    finestra();//crea il rettangolo
   }
  
 }
